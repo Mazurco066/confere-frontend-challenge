@@ -6,18 +6,15 @@ import styled, { createGlobalStyle } from 'styled-components'
 const GlobalStyles = createGlobalStyle`
   // Theme colors
   :root {
-    --primary: #32B768;
-    --darker: #2B7A4B;
-    --light: #DAF2E4;
+    --primary: #4ecca3;
+    --darker: #232931;
+    --light: #393e46;
 
-    --white: #52665A;
+    --white: #EEEEEE;
     
-    --highlight: #004953;
+    --highlight: #279285;
 
-    --background: #FFFFFF;
-    --card: #F0F0F0;
-
-    --info: #58C1F5;
+    --background: #393e46;
     
     --container: 100rem;
 
@@ -48,19 +45,19 @@ const GlobalStyles = createGlobalStyle`
     ::-webkit-scrollbar-track {
       box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
       -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-      background-color: #F5F5F5;
+      background-color: var(--light);
       overflow: hidden;
     }
 
     ::-webkit-scrollbar {
       width: 8px;
-      background-color: #F5F5F5;
+      background-color: var(--light);
       overflow: hidden;
     }
 
     ::-webkit-scrollbar-thumb {
-      background-color: var(--darker);
-      border: 2px solid var(--darker);
+      background-color: var(--primary);
+      border: 2px solid var(--primary);
     }
   }
 
@@ -90,8 +87,8 @@ const GlobalStyles = createGlobalStyle`
   .sc-custom-input {
     width: 100%;
     height: 100%;
-    border-color: var(--darker);
-    color: var(--white);
+    border-color: var(----light);
+    color: var(--darker);
     border-style: solid;
     border-radius: 8px;
     font-size: 1rem;

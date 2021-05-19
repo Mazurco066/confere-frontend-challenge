@@ -15,6 +15,8 @@ export default function Products() {
   const [ products, setProducts ] = useState([])
   const [ loading, setLoading ] = useState(false)
 
+  console.log(products, loading)
+
   // On page load
   useEffect(() => {
     tryAwait({
@@ -32,10 +34,7 @@ export default function Products() {
     <>
       <S.Wrapper>
         <Container>
-          <p>Produtos {loading}</p>
-          <pre>
-            {JSON.stringify(products, null, 2)}
-          </pre>
+
         </Container>
       </S.Wrapper>
     </>
