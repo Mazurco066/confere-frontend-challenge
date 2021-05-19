@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "Oswald";
+  src: url("Oswald-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Oswald";
+  font-weight: bold;
+  src: url("Oswald-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Oswald ExtraBold";
+  src: url("Oswald-Bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Oswald ExtraLightItalic";
+  src: url("Oswald-ExtraLight.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Oswald Medium";
+  src: url("Oswald-Medium.ttf") format("opentype");
+}
+
+input,
+button,
+body {
+  font-family: "Oswald";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Oswald ExtraBold";
+}
