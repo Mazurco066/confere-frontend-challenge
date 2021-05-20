@@ -22,7 +22,7 @@ export default function ProductModalBody({ product = {}, closeCallback }) {
   const formik = useFormik({
     initialValues: {
       amount: 1,
-      sku: sizes[0].sku
+      sku: sizes.filter(({ available }) => available)[0].sku
     },
     onSubmit: (values, { setSubmitting }) => {
       setSubmitting(true)
@@ -75,6 +75,9 @@ export default function ProductModalBody({ product = {}, closeCallback }) {
               <Select
                 label="Tamanho"
                 name="sku"
+                value={formik.values.sku}
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
                 options={sizes.filter(({ available }) => available).map(({ size, sku }) => ({
                   text: size,
                   value: sku

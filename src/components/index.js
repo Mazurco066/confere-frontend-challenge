@@ -7,6 +7,7 @@ import ModalHeader from './ModalHeader'
 import ProductAmount from './ProductAmount'
 import ProductList from './ProductList'
 import Select from './Select'
+import ShoppingCartModalBody from './ShoppingCartModalBody'
 
 export {
   AddProductModalBody,
@@ -17,5 +18,6 @@ export {
   ModalHeader,
   ProductAmount,
   ProductList,
-  Select
+  Select,
+  ShoppingCartModalBody
 }
