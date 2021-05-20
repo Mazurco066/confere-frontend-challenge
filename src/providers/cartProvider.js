@@ -12,12 +12,10 @@ const initialState = []
 function reducer(state, action) {
   
   // Retrieve action and payload
-  const { product, amount, display } = action.payload
+  const { product, amount, sku } = action.payload
 
   // Search if cart has the received product
-  const entry = state?.find((item) => 
-    item.id === product?.id
-  )
+  const entry = state?.find((item) => item.sku === sku)
 
   // Verify action
   switch (action.type) {
@@ -25,15 +23,11 @@ function reducer(state, action) {
       // If item is already in shopping cart
       if (entry) {
         const newItems = state.map((item) => {
-          if (
-            item.id === product?.id
-          ) {
-            const newAmount = item.amount + amount
+          const newAmount = item.amount + amount
+          if (item.sku === sku) {
             return {
-              cartId: `${product?.id}`,
-              display,
-              ...item,
-              ...product,
+              sku: sku,
+              product,
               amount: newAmount
             }
           }
@@ -46,10 +40,9 @@ function reducer(state, action) {
       }
       // If item is not in shopping cart
       const newItems = [...state, {
-        cartId: `${product?.id}`,
-        ...product,
-        display,
-        amount
+        sku: sku,
+        product,
+        amount: amount
       }]
       if (window !== undefined) {
         window.localStorage.setItem(CART_KEY, JSON.stringify(newItems))
@@ -57,7 +50,7 @@ function reducer(state, action) {
       return newItems
     case 'UPDATE_AMOUNT':
       const updatedItems = state?.map(s => {
-        if (s.cartId === `${product?.id}`) {
+        if (s.sku === sku) {
           return { ...s, amount: amount }
         }
         return { ...s }
@@ -67,9 +60,7 @@ function reducer(state, action) {
       }
       return updatedItems
     case 'REMOVE_ITEM':
-      const remainingItems = [ ...state.filter(s => 
-        s.cartId !== `${product?.id}`
-      )]
+      const remainingItems = [ ...state.filter(s => s.sku !== sku) ]
       if (window !== undefined) {
         window.localStorage.setItem(CART_KEY, JSON.stringify(remainingItems))
       }

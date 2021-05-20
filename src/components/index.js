@@ -1,11 +1,21 @@
+import AddProductModalBody from './AddProductModalBody'
+import Button from './Button'
 import Footer from './Footer'
 import Header from './Header'
 import Input from './Input'
+import ModalHeader from './ModalHeader'
+import ProductAmount from './ProductAmount'
 import ProductList from './ProductList'
+import Select from './Select'
 
 export {
+  AddProductModalBody,
+  Button,
   Footer,
   Header,
   Input,
-  ProductList
+  ModalHeader,
+  ProductAmount,
+  ProductList,
+  Select
 }

@@ -112,32 +112,34 @@ export const CustomModal = Modal.styled`
   padding: 15px;
   overflow-y: auto;
   max-height: 90%;
-  @media only screen and (max-width: 767px) {
-    margin: 0 1rem;
+  @media(min-width: 768px) {
+    max-width: 450px;
   }
-  @media(min-width: 1200px) {
-    max-width: 1000px;
+  @media only screen and (max-width: 767px) {
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    overflow-x: hidden;
   }
   ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-    background-color: #F5F5F5;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    background-color: var(--light);
     overflow: hidden;
   }
+
   ::-webkit-scrollbar {
     width: 8px;
-    background-color: #F5F5F5;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
+    background-color: var(--light);
     overflow: hidden;
   }
+
   ::-webkit-scrollbar-thumb {
     background-color: var(--primary);
     border: 2px solid var(--primary);
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
   }
 `
 

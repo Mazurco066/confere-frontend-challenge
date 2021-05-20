@@ -2,6 +2,7 @@
 import PropTypes from 'prop-types'
 import * as S from './styles'
 import { useShoppingCart } from 'hooks'
+import { useHistory } from 'react-router-dom'
 
 // Components
 import { Input } from 'components'
@@ -16,6 +17,7 @@ export default function Header({
 }) {
 
   // Hooks
+  const history = useHistory()
   const { state: items } = useShoppingCart()
 
   // Jsx
@@ -23,7 +25,7 @@ export default function Header({
     <S.Header>
       <S.Wrapper>
         <S.TopNavigation>
-          <S.AppName>
+          <S.AppName onClick={() => history.push('/')}>
             {appName}
           </S.AppName>
           <S.TouchableIcon onClick={() => onCartPress(items)}>

@@ -6,10 +6,10 @@ import { toast } from 'react-toastify'
 
 // Styles
 import * as S from './styles'
-import { Container } from 'styles/global'
+import { Container, CustomModal } from 'styles/global'
 
 // Components
-import { ProductList } from 'components'
+import { AddProductModalBody, ModalHeader, ProductList } from 'components'
 
 // Component
 export default function Products() {
@@ -17,8 +17,8 @@ export default function Products() {
   // Hooks
   const [ products, setProducts ] = useState([])
   const [ loading, setLoading ] = useState(false)
-
-  console.log(products, loading)
+  const [ selectedProduct, setSelectedProduct ] = useState({})
+  const [ isModalOpened, setModalOpenState ] = useState(false)
 
   // On page load
   useEffect(() => {
@@ -39,10 +39,28 @@ export default function Products() {
         <Container>
           <ProductList
             products={products}
-            noData="Nenhum produto disponível."
+            noData={loading ? 'Aguarde... Carregando' : 'Nenhum produto disponível.'}
+            onProductPress={p => {
+              setModalOpenState(true)
+              setSelectedProduct(p)
+            }}
           />
         </Container>
       </S.Wrapper>
+      <CustomModal
+        isOpen={isModalOpened}
+        onEscapeKeydown={() => setModalOpenState(false)}
+        onBackgroundClick={() => setModalOpenState(false)}
+      >
+        <ModalHeader
+          title="+ Carrinho"
+          onBackPress={() => setModalOpenState(false)}
+        />
+        <AddProductModalBody
+          product={selectedProduct}
+          closeCallback={() => setModalOpenState(false)}
+        />
+      </CustomModal>
     </>
   )
 }
