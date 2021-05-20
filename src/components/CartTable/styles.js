@@ -9,6 +9,10 @@ export const Wrapper = styled.div`
 export const Title = styled.h3`
   margin-bottom: 8px;
   color: var(--white);
+
+  strong {
+    color: var(--primary);
+  }
 `
 
 export const Item = styled.div`

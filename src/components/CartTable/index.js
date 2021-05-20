@@ -20,13 +20,21 @@ export default function CartTable({ items, onCheckoutClick }) {
   // JSX
   return (
     <S.Wrapper>
-      <S.Title>Carrinho de Compras</S.Title>
-      <Button
-        type="button"
-        text="Prosseguir para o checkout"
-        onClick={onCheckoutClick}
-        mb={1}
-      />
+      <S.Title>Carrinho de Compras conténdo um subtoal de<strong> R$ {
+        toBRL(
+          items.reduce((ac, { amount, product: { actual_price } }) => 
+            ac + (amount * parseFloat(actual_price.replace('R$', '').replace(',', '.'))), 0)
+          )
+        }</strong>
+      </S.Title>
+      { items.length > 0 && (
+        <Button
+          type="button"
+          text="Prosseguir para o checkout"
+          onClick={onCheckoutClick}
+          mb={1}
+        />
+      ) }
       {items?.map(({
         product: { name, image, actual_price },
         amount,
@@ -86,7 +94,7 @@ export default function CartTable({ items, onCheckoutClick }) {
         </S.Item>
       ))}
       { items?.length <= 0 && (
-        <p>Não há itens em seu carrinho de compras!</p>
+        <p style={{ marginBottom: 16 }}>Não há itens em seu carrinho de compras!</p>
       ) }
     </S.Wrapper>
   )

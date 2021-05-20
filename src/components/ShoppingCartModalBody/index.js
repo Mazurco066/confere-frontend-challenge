@@ -66,7 +66,7 @@ export default function ShoppingCartModalBody({ closeCallback }) {
           R$ {
             toBRL(
               items.reduce((ac, { amount, product: { actual_price } }) => 
-                ac + (amount * parseFloat(actual_price.replace('R$', ''))), 0)
+                ac + (amount * parseFloat(actual_price.replace('R$', '').replace(',', '.'))), 0)
             )
           }
         </S.Subtotal>

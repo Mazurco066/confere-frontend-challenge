@@ -26,11 +26,13 @@ export default function Cart() {
             items={items}
             onCheckoutClick={() => router.push('/checkout')}
           />
-          <Button
-            type="button"
-            text="Prosseguir para o checkout"
-            onClick={() => router.push('/checkout')}
-          />
+          { items.length > 0 && (
+            <Button
+              type="button"
+              text="Prosseguir para o checkout"
+              onClick={() => router.push('/checkout')}
+            />
+          ) }
         </Container>
       </S.Wrapper>
     </>

@@ -14,6 +14,12 @@ export const Label = styled.label`
   color: var(--white);
 `
 
+export const FormLabel = styled.label`
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: var(--white);
+`
+
 export const InputGroup = styled.div`
   display: flex;
   justify-content: ${({ fit }) => fit ? 'space-between' : 'center'};

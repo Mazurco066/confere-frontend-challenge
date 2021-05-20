@@ -13,6 +13,7 @@ export default function Select({
   message,
   mb,
   options,
+  labelLeft,
   fit,
   ...rest
 }) {
@@ -20,7 +21,13 @@ export default function Select({
   // Jsx
   return (
     <S.Wrapper mb={mb}>
-      {label && (<S.Label>{label}</S.Label>)}
+      {label && (
+        labelLeft ? (
+          <S.FormLabel>{label}</S.FormLabel>
+        ) : (
+          <S.Label>{label}</S.Label>
+        )
+      )}
       <S.InputGroup fit={fit}>
         {AddonLeft && (
           <S.AddonLeft onClick={onAddonLeftClick}>
@@ -58,6 +65,7 @@ Select.defaultProps = {
   name: '',
   placeholder: '',
   label: null,
+  labelLeft: false,
   addonLeft: null,
   invalid: false,
   message: '',
@@ -76,6 +84,7 @@ Select.propTypes = {
   onAddonLeftClick: PropTypes.func,
   mb: PropTypes.string,
   fit: PropTypes.bool,
+  labelLeft: PropTypes.bool,
   options: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.text,
