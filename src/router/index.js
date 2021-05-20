@@ -6,13 +6,14 @@ import { Switch } from 'react-router-dom'
 import RouteWrapper from './route'
 
 // Pages
-import { Products } from 'pages'
+import { Cart, Products } from 'pages'
 
 // Routes
 export default function Router() {
   return (
     <Switch>
       <RouteWrapper exact path="/" component={Products} />
+      <RouteWrapper path="/cart" component={Cart} />
     </Switch>
   )
 }

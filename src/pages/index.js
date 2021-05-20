@@ -1,4 +1,5 @@
 import App from './App'
+import Cart from './Cart'
 import Products from './Products'
 
-export { App, Products }
+export { App, Cart, Products }

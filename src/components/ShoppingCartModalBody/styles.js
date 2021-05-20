@@ -42,14 +42,19 @@ export const Item = styled.div`
   }
 `
 
-export const Logo = styled.div`
+export const Image = styled.div`
   flex: 0 0 auto;
   position: relative;
   width: 60px;
   height: 60px;
-  border-radius: 40px;
+  border-radius: 8px;
   overflow: hidden;
   margin-right: 1rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
 `
 
 export const Info = styled.div`
@@ -63,13 +68,14 @@ export const Description = styled.p`
   width: 100%;
 
   strong {
-    color: var(--darker);
+    color: var(--primary);
+    font-weight: lighter;
   }
 `
 
 export const Price = styled.p`
   flex: 0 0 auto;
-  color: var(--darker);
+  color: var(--white);
 `
 
 export const Actions = styled.div`
@@ -107,7 +113,7 @@ export const Action = styled.button`
 export const Subtotal = styled.p`
   margin: 1rem 0;
   font-size: 1.17rem;
-  color: var(--darker);
+  color: var(--white);
 `
 
 export const NoData = styled.p`
