@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import api from 'api'
 import { tryAwait } from 'utils'
 import { toast } from 'react-toastify'
+import { useSearch } from 'hooks'
 
 // Styles
 import * as S from './styles'
@@ -15,6 +16,7 @@ import { AddProductModalBody, ModalHeader, ProductList } from 'components'
 export default function Products() {
 
   // Hooks
+  const { state: filter } = useSearch()
   const [ products, setProducts ] = useState([])
   const [ loading, setLoading ] = useState(false)
   const [ selectedProduct, setSelectedProduct ] = useState({})
@@ -39,6 +41,7 @@ export default function Products() {
         <Container>
           <ProductList
             products={products}
+            filter={filter}
             noData={loading ? 'Aguarde... Carregando' : 'Nenhum produto disponível.'}
             onProductPress={p => {
               setModalOpenState(true)

@@ -3,7 +3,7 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { ModalProvider } from 'styled-react-modal'
 import { ToastContainer } from 'react-toastify'
-import { CartProvider } from 'providers'
+import { SearchProvider, CartProvider } from 'providers'
 
 // Styles
 import GlobalStyles from 'styles/global'
@@ -20,11 +20,13 @@ export default function App() {
     <Router>
       <ModalProvider>
         <CartProvider>
-          <Routes />
-          <GlobalStyles />
-          <ToastContainer
-            position="top-right"
-          />
+          <SearchProvider>
+            <Routes />
+            <GlobalStyles />
+            <ToastContainer
+              position="top-right"
+            />
+          </SearchProvider>
         </CartProvider>
       </ModalProvider>
     </Router>

@@ -9,7 +9,7 @@ import { FaCartPlus } from 'react-icons/fa'
 
 // Component
 export default function ProductList({ products, onProductPress, filter, noData }) {
-    
+
   // Jsx
   return (
     <>
@@ -18,7 +18,11 @@ export default function ProductList({ products, onProductPress, filter, noData }
           <S.Grid >
             {                   
               products
-                .filter(({ name }) => name.includes(filter))
+                .filter(p =>
+                  p.name.toString().includes(filter.toUpperCase()) ||
+                  p.actual_price.toString().includes(filter.toUpperCase()) ||
+                  p.regular_price.toString().includes(filter.toUpperCase())
+                )
                 .map(({ 
                   name,
                   image,

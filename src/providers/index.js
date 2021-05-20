@@ -1,3 +1,4 @@
 import CartProvider, { CartContext } from './cartProvider'
+import SearchProvider, { SearchContext } from './searchProvider'
 
-export { CartContext, CartProvider }
+export { CartContext, CartProvider, SearchProvider, SearchContext }
