@@ -1,5 +1,6 @@
 import AddProductModalBody from './AddProductModalBody'
 import Button from './Button'
+import CartTable from './CartTable'
 import Footer from './Footer'
 import Header from './Header'
 import Input from './Input'
@@ -12,6 +13,7 @@ import ShoppingCartModalBody from './ShoppingCartModalBody'
 export {
   AddProductModalBody,
   Button,
+  CartTable,
   Footer,
   Header,
   Input,
