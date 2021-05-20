@@ -8,6 +8,9 @@ import { toast } from 'react-toastify'
 import * as S from './styles'
 import { Container } from 'styles/global'
 
+// Components
+import { ProductList } from 'components'
+
 // Component
 export default function Products() {
 
@@ -34,7 +37,10 @@ export default function Products() {
     <>
       <S.Wrapper>
         <Container>
-
+          <ProductList
+            products={products}
+            noData="Nenhum produto disponível."
+          />
         </Container>
       </S.Wrapper>
     </>
