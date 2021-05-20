@@ -1,31 +1,33 @@
-# EASY FLOWER ADMIN
+# CONFERE FRONTEND CHALLENGE
 
-Painel administrativo para o Easy Flowers. Produto em desenvolvimento.
+A ReactJS PWA developed by [@Mazurco066](https://github.com/Mazurco066).
 
-## Bibliotecas Utilizadas
+This App consists in a minimalist version of Ecommerce/Marketplace.
 
-Bibliotecas utilizadas para construção desse projeto:
+## Libraries and Structure
+
+A Job application app using ReactJS, there are libs that I used:
 
 * **React**
 * **Eslint**
 * **Custom Made Components**
 * **Formik**
-* **Apollo Client**
+* **Axios**
 
-## Configuração inicial do projeto
+## Setup
 
-Assumindo que tenha o [yarn](https://yarnpkg.com/) instalado, execute os seguintes comandos no terminal para baixar as dependências do projeto:
+Assuming you have [yarn](https://yarnpkg.com/), run the following commands to install dependencies and run the App:
 ```sh
-# Instalar dependências do nodejs
+# Install nodejs dependencies
 yarn install
 
-# Não esqueça de adicionar seu arquivo .env.local baseado no arquivo .env.example
+# Do not forget to setup your .env file based on .env.example before running the command below
 yarn dev
 
-# Para rodar build de produção localmente
-yarn build | yarn start
+# For production build run
+yarn build
 ```
 
-### Licença
+### License
 
-Esse projeto está sobre a licença MIT. Verifique o arquivo [LICENSE](LICENSE) para mais detalhes.
+This project is licensed under the MIT License. Check the [LICENSE](LICENSE) file for further details.
